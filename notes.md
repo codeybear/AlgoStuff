@@ -11,10 +11,16 @@ https://codereview.stackexchange.com/questions/224516/project-euler-24-lexicogra
 
 Thats the best reference found so far
 
+### Combinations
+Needs some investigation
+https://en.m.wikipedia.org/wiki/Binomial_coefficient
+Example of formula here:
+40!/((20!)(40-20)!)
+
 ### Lattice Paths
 From euler #15
 
-Roots through a matrix are given by binomial coefficients - 
+Roots through a matrix are given by binomial coefficients 
 https://en.m.wikipedia.org/wiki/Binomial_coefficient
 
 knowing this makes it a simple calculation:
