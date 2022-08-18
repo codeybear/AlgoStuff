@@ -1,3 +1,3 @@
 import funcs
 
-print(funcs.find_divisors(20))
+print(funcs.coin_combo(200))
