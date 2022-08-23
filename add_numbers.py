@@ -33,7 +33,6 @@ class Solution:
             lastNode.val = digit
             
             if idx < len(snum) - 1:   # Need to prevent the creation of an extra node on the end
-                print(idx)
                 lastNode.next = ListNode()
                 lastNode = lastNode.next
 

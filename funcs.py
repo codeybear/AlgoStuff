@@ -60,3 +60,34 @@ def coin_combo(target):
   
     print(table)
     return table[target]
+
+def create_palindrome(inp, b, isOdd):
+    n = inp
+    palin = inp
+  
+    # checks if number of digits to be produced is odd or even
+    # if odd then neglect the last digit of input when reversing
+    if (isOdd):
+        n = n // b
+  
+    # Creates palindrome by just appending reverse
+    # of number to itself
+    while (n > 0):
+        palin = palin * b + (n % b)
+        n = n // b
+    return palin
+  
+def generate_palindromes(n):
+    """Function to print decimal palindromic number."""
+
+    # Run two times for odd and even length palindromes
+    for j in range(2):
+        i = 1
+        pall = 0
+
+        while True:
+            pall = create_palindrome(i, 10, j % 2)
+            if pall > n: break
+            print(pall)
+            i = i + 1
+  
