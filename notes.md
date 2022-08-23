@@ -39,3 +39,9 @@ This needs more thinking about but the formula is as follows:
 For euler 30 and 34 the max is the largest some of a certain number of digits 9^5 or 9! doesn't contain enough digits. 
 
 So for example 9! x 8 = a seven digit number. So stop at 9! x 7 (the largest 7 digit number possible).
+
+### pandigital
+euler #38
+This is semi brute force but like previous exersize you can analyse the 
+number of digits required
+Can also exit the loop at points where the number is too large
