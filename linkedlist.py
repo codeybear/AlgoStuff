@@ -22,7 +22,6 @@ class LinkedList:
 
         while node:
             print(node.value)
-            # if not node.next: break
             node = node.next
 
     def output_recurse(self):
