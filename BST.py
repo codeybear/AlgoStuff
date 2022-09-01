@@ -44,6 +44,30 @@ class BST:
         if node.right   :
             self.print_inorder(node.right)
 
+    def print_by_level(self):
+        """Level order traveral of a binary tree.
+
+        www.codinginterview.com/amazon-interview-questions
+        """
+        nodes = [self.root]
+        level = 1
+
+        while nodes:
+            next_level = []
+
+            for node in nodes:
+                print(node.value, level)
+
+                if node.left:
+                    next_level.append(node.left)
+                    
+                if node.right:
+                    next_level.append(node.right)
+
+            nodes = []
+            nodes = next_level
+            level += 1
+
 
 
 bst = BST()
@@ -54,4 +78,4 @@ bst.add(20)
 bst.add(10)
 bst.add(40)
 bst.add(60)
-bst.print_inorder()
+bst.print_by_level()
