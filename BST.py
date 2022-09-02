@@ -33,6 +33,7 @@ class BST:
 
 
     def print_inorder(self, node = None):
+        """This is a depth first traversal (left, root, right)."""
         if not node:
             node = self.root
 
@@ -45,8 +46,9 @@ class BST:
             self.print_inorder(node.right)
 
     def print_by_level(self):
-        """Level order traveral of a binary tree.
+        """Level order traveral of a binary tree problem.
 
+        This is effectively a breadth first traversal
         www.codinginterview.com/amazon-interview-questions
         """
         nodes = [self.root]
@@ -60,7 +62,7 @@ class BST:
 
                 if node.left:
                     next_level.append(node.left)
-                    
+
                 if node.right:
                     next_level.append(node.right)
 
@@ -78,4 +80,5 @@ bst.add(20)
 bst.add(10)
 bst.add(40)
 bst.add(60)
+bst.print_inorder()
 bst.print_by_level()
