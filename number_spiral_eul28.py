@@ -1,5 +1,5 @@
 # https://www.educative.io/answers/how-to-solve-the-number-spiral-diagonals-problem
-# No point figuring this out although I was right to look for patterns in
+# No point figuring this out although I was right to look for patterns 
 # you would spend a fair amount of time doing this though
 
 
