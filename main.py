@@ -1,18 +1,25 @@
-def find_averages_of_subarrays(k, arr):
+from collections import defaultdict
+
+def max_distinct_substring(text, s):
+    max_length = 0
+    unique_chars = defaultdict(int)
     start_ptr = 0
-    total = 0
-    averages = []
 
-    for index, val in enumerate(arr):
-        total += val
+    for char in text:
+        unique_chars[char] += 1
 
-        if index + 1 - k >= 0:
-            averages.append(total / (index - start_ptr + 1))
-            total -= arr[start_ptr]
+        while len(unique_chars) > 2:
+            start_char = text[start_ptr]
+
+            unique_chars[start_char] -= 1
+            
+            if unique_chars[start_char] == 0:
+                del unique_chars[start_char]
+
             start_ptr += 1
 
-    return averages
+    print(unique_chars)
+    return max_length
 
 
-result = find_averages_of_subarrays(5, [1, 3, 2, 6, -1, 4, 1, 8, 2])
-print("Averages of subarrays of size K: " + str(result))
+print(max_distinct_substring("araaci", s=7))
