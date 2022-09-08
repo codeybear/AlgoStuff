@@ -1,3 +1,14 @@
+'''https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628541009794_1Unit
+
+Longest Substring with K Distinct Characters (medium)
+
+Problem Statement
+
+Given a string, find the length of the longest substring in it with no more than K distinct characters.
+
+You can assume that K is less than or equal to the length of the given string.
+'''
+
 from collections import defaultdict
 
 def max_distinct_substring(text, k):
