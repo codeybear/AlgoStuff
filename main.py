@@ -1,32 +1,25 @@
-'''Longest Substring with K Distinct Characters (medium)
-
-One of the tests where a dict is needed to track character frequency
-
-https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628541009794_1Unit
-'''
-
 from collections import defaultdict
 
-def max_distinct_substring(text, k):
+def max_distinct_substring(text, s):
     max_length = 0
     unique_chars = defaultdict(int)
     start_ptr = 0
+    end_ptr = len(arr) - 1
+    min_total = math.inf
 
-    for end_ptr, char in enumerate(text):
-        unique_chars[char] += 1
+    while start_ptr != end_ptr:
+        total = target - (arr[start_ptr] + arr[end_ptr])
 
-        while len(unique_chars) > k:
-            start_char = text[start_ptr]
-            unique_chars[start_char] -= 1
-            
-            if unique_chars[start_char] == 0:
-                del unique_chars[start_char]
+        if total >= 0:
+            min_total = min(total, min_total)
 
+        if total > 0:
             start_ptr += 1
+        else:
+            end_ptr -= 1
 
-        max_length = max(max_length, end_ptr - start_ptr + 1)
-
-    return max_length
+    return min_total
 
 
-print(max_distinct_substring("araaci", 2))
+print(find_closest_sum_in_list([10, 22, 28, 29, 30, 40], 54))
+print(find_closest_sum_in_list([1, 3, 4, 7, 10], 15))

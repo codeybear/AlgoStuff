@@ -1,8 +1,12 @@
-'''Longest Substring with K Distinct Characters (medium)
+'''https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628541009794_1Unit
 
-One of the tests where a dict is needed to track character frequency
+Longest Substring with K Distinct Characters (medium)
 
-https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628541009794_1Unit
+Problem Statement
+
+Given a string, find the length of the longest substring in it with no more than K distinct characters.
+
+You can assume that K is less than or equal to the length of the given string.
 '''
 
 from collections import defaultdict
