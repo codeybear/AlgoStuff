@@ -34,6 +34,4 @@ def merge_intervals(sections):
     return sections
 
 
-# print(merge_intervals([(1, 4), (2, 5), (7, 9)]))
-# print(merge_intervals([(1, 4), (2, 6), (3, 5)]))
 print(merge_intervals([(6, 7), (2, 4), (5, 9), (15, 20), (14, 22)]))
