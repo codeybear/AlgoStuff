@@ -19,25 +19,24 @@ class BinaryTree:
         next = deque()
         current.append(self.root)
 
-        while next:
-            next = deque()
-
+        while True:
             while current:
                 node = current.pop()
                 output.append(node.value)
 
                 if node.left:
-                    next.append(node.left)
+                    next.appendleft(node.left)
 
                 if node.right:
-                    next.append(node.right)
+                    next.appendleft(node.right)
             
+            if not next: break
             current = next
+            next = deque()
 
         return output
 
         
-
 tree = BinaryTree(10)
 tree.root.left = Node(7)
 tree.root.right = Node(21)
