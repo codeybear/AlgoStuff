@@ -52,13 +52,13 @@ class BST:
         www.codinginterview.com/amazon-interview-questions
         """
         nodes = [self.root]
-        level = 1
+        output = []
 
         while nodes:
-            next_level = []
+            next_level = []  # maybe not efficient clearing a list, could append pop from the queueS
 
             for node in nodes:
-                print(node.value, level)
+                output.append(node.value)
 
                 if node.left:
                     next_level.append(node.left)
@@ -66,10 +66,9 @@ class BST:
                 if node.right:
                     next_level.append(node.right)
 
-            nodes = []
             nodes = next_level
-            level += 1
-
+            
+        return output
 
 
 bst = BST()
@@ -81,4 +80,4 @@ bst.add(10)
 bst.add(40)
 bst.add(60)
 bst.print_inorder()
-bst.print_by_level()
+print(bst.print_by_level())
