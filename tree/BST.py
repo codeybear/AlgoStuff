@@ -55,7 +55,7 @@ class BST:
         output = []
 
         while nodes:
-            next_level = []  # maybe not efficient clearing a list, could append pop from the queueS
+            next_level = []  # maybe not efficient clearing a list? sample code clears a list each time
 
             for node in nodes:
                 output.append(node.value)

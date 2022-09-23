@@ -15,12 +15,12 @@ class BinaryTree:
 
     def level_order_traversal(self):
         output = []
-        current = deque()
-        next = deque()
-        current.append(self.root)
+        current = deque([self.root])
 
-        while True:
-            while current:
+        while current:
+            next = deque()              # keep a track of the child nodes from the current iteration 
+
+            while current:              # weird inner loop, because of use of dequeue
                 node = current.pop()
                 output.append(node.value)
 
@@ -29,11 +29,8 @@ class BinaryTree:
 
                 if node.right:
                     next.appendleft(node.right)
-            
-            if not next: break
+    
             current = next
-            next = deque()
-
         return output
 
         
