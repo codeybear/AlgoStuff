@@ -1,28 +1,10 @@
-def find_all_duplicates(nums):
-  i = 0
-  
-  while i < len(nums):
-    j = nums[i] - 1
-  
-    if nums[i] != nums[j]:
-      nums[i], nums[j] = nums[j], nums[i]  # swap
-    else:
-      i += 1
+from tree.BT import *
 
-  duplicateNumbers = []
-  
-  for i in range(len(nums)):
-    if nums[i] != i + 1:
-      duplicateNumbers.append(nums[i])
-
-  print(nums)
-  
-  return duplicateNumbers
-
-
-def main():
-  print(find_all_duplicates([3, 4, 4, 5, 5]))
-  print(find_all_duplicates([5, 4, 7, 2, 3, 5, 3]))
-
-
-main()
+tree = BinaryTree(10)
+tree.root.left = Node(7)
+tree.root.right = Node(21)
+tree.root.left.left = Node(9)
+tree.root.right.left = Node(10)
+tree.root.right.right = Node(5)
+# print(tree.level_order_traversal())
+print(tree.level_order_averages())
