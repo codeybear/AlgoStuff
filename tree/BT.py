@@ -37,19 +37,22 @@ class BinaryTree:
       output = []
       current = deque([self.root])
 
+      # trying the method described by design gurus using a queue rather than a list
       while current:
         length = len(current)
+        average = 0
 
         for idx in range(length):
           node = current.pop()
-
-          output.append(node.value)
+          average += node.value
 
           if node.left:
             current.appendleft(node.left)
 
           if node.right:
             current.appendleft(node.right)
+
+        output.append(average / length)
             
       return output
       
