@@ -13,27 +13,30 @@ class BinaryTree:
     def __init__(self, root):
         self.root = Node(root)
 
-    def level_order_traversal(self):
+    def level_order_traversal_simple(self):
+        '''Pushing the child nodes to a queue (appendleft) and popping from the right
+        is enough to ensure the it is traversed in order with any special "level"
+        variables'''
         output = []
         current = deque([self.root])
 
         while current:
-            next = deque()              # keep a track of the child nodes from the current iteration 
+            next = deque()   # keep a track of the child nodes from the current iteration 
+            node = current.pop()
+            output.append(node.value)
 
-            while current:              # weird inner loop, because of use of dequeue
-                node = current.pop()
-                output.append(node.value)
+            if node.left:
+                current.appendleft(node.left)
 
-                if node.left:
-                    next.appendleft(node.left)
-
-                if node.right:
-                    next.appendleft(node.right)
+            if node.right:
+                current.appendleft(node.right)
     
-            current = next
-        return output
+        return output      
 
+  
     def level_order_averages(self):
+      '''Doing something like an average requires tracking the current number of nodes
+      on the current level'''
       output = []
       current = deque([self.root])
 
