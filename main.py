@@ -1,5 +1,3 @@
-from termios import TABDLY
-
 
 class Node:
   def __init__(self, value=0):
@@ -12,16 +10,25 @@ class Tree:
   def __init__(self):
     self.root = None
 
-  def calc_all_paths(self, node, target, paths):
-    target = target - node.value
-    paths.append[node.value]
+  def calc_all_paths(self, target):
+    all_paths = []
+    self.calc_all_paths_recurse(self.root, target, [], all_paths)
+    return all_paths
 
+  def calc_all_paths_recurse(self, node, target, paths, all_paths):
+    target = target - node.value
+    paths.append(node.value)
+    
+    if target == 0:
+      all_paths.extend(paths)
+      
     if node.left:
-      self.calc_all_paths(node.left, target, paths)
+      self.calc_all_paths_recurse(node.left, target, paths, all_paths)
 
     if node.right:
-      self.calc_all_paths(node.right, target, paths)
+      self.calc_all_paths_recurse(node.right, target, paths, all_paths)
 
+    del paths[-1]
 
   def calc_target(self, node, target):
     target = target - node.value
@@ -49,4 +56,4 @@ tree.root.left.left = Node(9)
 tree.root.right.left = Node(10)
 tree.root.right.right = Node(5)
 
-print(tree.calc_all_paths(tree.root, 23, []))
+print(tree.calc_all_paths(23))
