@@ -33,7 +33,6 @@ class BinaryTree:
     
         return output      
 
-  
     def level_order_averages(self):
       '''Doing something like an average requires tracking the current number of nodes
       on the current level'''
@@ -58,7 +57,7 @@ class BinaryTree:
         output.append(average / length)
             
       return output
-      
+
         
 tree = BinaryTree(10)
 tree.root.left = Node(7)
