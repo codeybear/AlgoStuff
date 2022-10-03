@@ -16,6 +16,5 @@ def binary_search(arr, num):
             end = mid - 1
 
 
-
 print(binary_search([4, 6, 10], 10))
 print(binary_search([1, 2, 3, 4, 5, 6, 7], 5))
