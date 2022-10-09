@@ -18,6 +18,7 @@ def merge_intervals(sections):
     sections.sort(key=lambda x: x[0])
     pos = 0
 
+    # we are deleting sections so need to think about loop
     while pos < len(sections) - 1:
         if len(sections) < 2:
             break
