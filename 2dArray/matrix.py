@@ -1,7 +1,7 @@
 '''
 2d matrix problems
 
-All are classes as easy so copied the code from one here
+All are classed as easy so copied the code from one here
 
 https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_62d53be009288Unit
 
