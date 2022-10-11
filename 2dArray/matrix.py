@@ -3,6 +3,8 @@
 
 All are classed as easy so copied the code from one here
 
+Can navigate the matrix by depth (recursive) or breadth first
+
 https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_62d53be009288Unit
 
 Print out the size of the largest island
