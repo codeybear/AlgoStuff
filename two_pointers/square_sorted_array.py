@@ -13,12 +13,15 @@ def square_sorted_array(arr):
     start_ptr = 0
     end_ptr = 0
 
+    # find the index of zero
     for idx, num in enumerate(arr):
         if num >= 0:
             end_ptr = idx
             start_ptr = idx - 1
             break
 
+    # end pointer moves forwards, start pointer moved backwards
+    # add the square of the smaller of the two amounts first
     while len(arr_sorted) < len(arr):
         print(start_ptr, end_ptr, arr_sorted)
         neg = arr[start_ptr]

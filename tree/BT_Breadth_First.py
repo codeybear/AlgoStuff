@@ -15,7 +15,7 @@ class BinaryTree:
 
     def level_order_traversal_simple(self):
         '''Pushing the child nodes to a queue (appendleft) and popping from the right
-        is enough to ensure the it is traversed in order with any special "level"
+        is enough to ensure the it is traversed in order without any special "level"
         variables'''
         output = []
         current = deque([self.root])

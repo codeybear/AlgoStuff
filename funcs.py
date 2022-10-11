@@ -78,7 +78,7 @@ def create_palindrome(inp, b, isOdd):
     return palin
   
 def generate_palindromes(n):
-    """Function to print decimal palindromic number."""
+    """Function to print decimal palindromic numbers up to n."""
 
     # Run two times for odd and even length palindromes
     for j in range(2):

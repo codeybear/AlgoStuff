@@ -46,7 +46,7 @@ print(binary_search_ceiling([4, 6, 10], 17))
 
 
 def binary_search_char_ceiling(arr, char):
-    '''find the smallest character great than a character in a circular array'''
+    '''find the smallest character greater than a character in a circular array'''
     start = 0
     end = len(arr) - 1
     smallest = 'z'
