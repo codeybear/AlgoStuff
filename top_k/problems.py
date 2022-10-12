@@ -32,7 +32,8 @@ def k_closest_points(arr, k):
 
     return max_heap
 
+# print(k_closest_points([(1, 3), (3, 4), (2, -1)], 2))
+
 def distance(x, y):
   return math.sqrt(x**2 + y**2)
-
-print(k_closest_points([(1, 3), (3, 4), (2, -1)], 2))
+  
