@@ -1,5 +1,4 @@
 from decimal import Decimal
-import math
 
 def solution(S, B):
     amounts = []
@@ -14,7 +13,6 @@ def solution(S, B):
     for num in amounts:
         allocated = over * (num / total)
         allocated = round(allocated, 2)
-        # allocated = math.floor(allocated * 100)/100.0
         output.append(allocated)
         over = over - allocated
         total = total - num
@@ -23,16 +21,8 @@ def solution(S, B):
 
     return output
 
-    # print(over, sum(amounts))
-
 print(solution('300.01', ['300.00', '200.00', '100.00']))
 
-
-
-
-
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
 
 def solution(X):
     m = 60
