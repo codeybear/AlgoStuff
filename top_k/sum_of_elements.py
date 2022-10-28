@@ -1,3 +1,11 @@
+'''
+Given an array, find the sum of all numbers between the K1’th and K2’th smallest elements of that array.
+
+Medium problem
+
+https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628744351402_102Unit
+'''
+
 from heapq import *
 
 def sum_of_elements(arr, k1, k2):
