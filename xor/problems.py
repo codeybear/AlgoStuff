@@ -7,6 +7,7 @@ https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=
 '''
 
 def find_missing_number(arr):
+  '''Solution without xor. Time is o(n) but we could get an integer overflow'''
   n = len(arr) + 1
   # find sum of all numbers from 1 to n.
   s1 = 0
@@ -23,6 +24,23 @@ def find_missing_number(arr):
 arr = [1, 5, 2, 6, 4] 
 print(f'Missing number is: {find_missing_number(arr)}')
 
+def find_missing_number(arr):
+  '''Same as above using xor, no chance of integer overflow'''
+  n = len(arr) + 1
+  # x1 represents XOR of all values from 1 to n
+  x1 = 1
+
+  for i in range(2, n+1):
+    x1 = x1 ^ i
+
+  # x2 represents XOR of all values in arr
+  x2 = arr[0]
+
+  for i in range(1, n-1):
+    x2 = x2 ^ arr[i]
+  
+  # missing number is the xor of x1 and x2
+  return x1 ^ x2
 
 def find_single_number(arr):
     '''Works because x ^ x = 0 so duplicates are removed'''
