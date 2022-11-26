@@ -15,10 +15,11 @@ def coin_change(coins, used, amount):
 
     if amount_new == 0: 
       print(used_new)
-      return 1
+      # we need to pass up the result of previous iterations
+      return combo_count + 1
 
     if amount_new < 0:
-      return 0
+      return combo_count
 
     combo_count += coin_change(coins, used_new, amount_new)
 
