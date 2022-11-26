@@ -1,6 +1,8 @@
 '''
 Dynamic programming coin change problem
 
+First attempt that needs to check for duplicates.
+
 https://www.geeksforgeeks.org/coin-change-dp-7
 '''
 
