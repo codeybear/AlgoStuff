@@ -1,0 +1,34 @@
+from collections import deque
+from collections import defaultdict
+
+
+def topo_sort(vertices, edges):
+  adjacent = defaultdict(list)
+  in_degrees = defaultdict(int)
+
+  for parent, child in edges:
+    in_degrees[child] += 1    
+    adjacent[parent].append(child)
+
+  sources = deque()
+  
+  for parent, _ in adjacent.items():
+    if parent not in in_degrees:
+      sources.append(parent)
+
+  output = []
+
+  while len(sources) > 0:
+    source = sources.popleft()
+    output.append(source)
+    
+    for child in adjacent[source]:
+      in_degrees[child] -=1
+
+      if in_degrees[child] == 0:
+        sources.append(child)
+      
+  return output
+
+
+print(topo_sort(5, [[4, 2], [4, 3], [2, 0], [2, 1], [3, 1]]))
