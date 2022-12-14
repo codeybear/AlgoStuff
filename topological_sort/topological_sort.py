@@ -29,6 +29,8 @@ def topological_sort(vertices, edges):
         if inDegree[key] == 0:
             sources.append(key)
 
+    print(sources)
+
     # d. For each source, add it to the sortedOrder and subtract '1' from all of its 
     # a child can't become a source until all parents have been processed
     while sources:
@@ -38,8 +40,8 @@ def topological_sort(vertices, edges):
         for child in graph[vertex]:  # get the node's children to decrement their parent links
             inDegree[child] -= 1
 
-        if inDegree[child] == 0:
-            sources.append(child)
+            if inDegree[child] == 0:
+                sources.append(child)
 
     # topological sort is not possible as the graph has a cycle
     if len(sortedOrder) != vertices:
@@ -49,7 +51,7 @@ def topological_sort(vertices, edges):
 
 
 def main():
-  print("Topological sort: " +
-        str(topological_sort(4, [[3, 2], [3, 0], [2, 0], [2, 1]])))
+    print("Topological sort: " + str(topological_sort(5, [[4, 2], [4, 3], [2, 0], [2, 1], [3, 1]])))
+    print("Topological sort: " + str(topological_sort(7, [[6, 4], [6, 2], [5, 3], [5, 4], [3, 0], [3, 1], [3, 2], [4, 1]])))
 
 main()
