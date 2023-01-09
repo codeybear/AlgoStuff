@@ -16,3 +16,15 @@ def find_averages_of_subarrays(k, arr):
 
 result = find_averages_of_subarrays(5, [1, 3, 2, 6, -1, 4, 1, 8, 2])
 print("Averages of subarrays of size K: " + str(result))
+
+def find_averages_of_subarrays(size, arr):
+  '''Second attempt, didn't see a need for a start pointer'''
+  output = []
+  total = 0
+
+  for index, num in enumerate(arr):
+    total += num
+
+    if index - size + 1 >= 0:
+      output.append(total / size)
+      total -= arr[index - size]

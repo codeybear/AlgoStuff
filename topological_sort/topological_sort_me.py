@@ -1,4 +1,4 @@
-'''The main difference here is that I don't pre-initialise the lists'''
+'''The main difference here is that I don't pre-initialise the dictionaries'''
 
 from collections import deque
 from collections import defaultdict

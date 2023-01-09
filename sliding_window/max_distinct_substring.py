@@ -11,6 +11,7 @@ You can assume that K is less than or equal to the length of the given string.
 
 from collections import defaultdict
 
+
 def max_distinct_substring(text, k):
     max_length = 0
     unique_chars = defaultdict(int)
@@ -34,3 +35,4 @@ def max_distinct_substring(text, k):
 
 
 print(max_distinct_substring("araaci", 2))
+print(max_distinct_substring("cbbebi", 3))
