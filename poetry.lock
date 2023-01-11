@@ -1,0 +1,15 @@
+[[package]]
+name = "defaultdict-nicknackgus"
+version = "1.0.2"
+description = "defaultdict with deepcopy support"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "9dde57d5fd6626ef076e1b742acf48465fb1a2f57c4355f6770ed8abaeede252"
+
+[metadata.files]
+defaultdict-nicknackgus = []
