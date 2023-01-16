@@ -1,32 +1,3 @@
-from collections import defaultdict
+# result = find_averages_of_subarrays(5, [1, 3, 2, 6, -1, 4, 1, 8, 2])
+# print("Averages of subarrays of size K: " + str(result))
 
-
-def find_perms(string, perm):
-  perms = defaultdict(int)
-  start_ptr = 0
-
-  for char in perm:
-    perms[char] += 1
-  
-  for end_ptr, char in enumerate(string):
-    if char in perms:
-      perms[char] -= 1
-
-      if perms[char] == 0:
-        del perms[char]
-    else:
-      while start_ptr < end_ptr:
-        if string[start_ptr] in perm:
-          perms[start_ptr] += 1
-
-        start_ptr += 1
-    
-    if len(perms) == 0:
-      return True
-      
-  return False
-
-print(find_perms("oidbcaf", "abc"))
-print(find_perms("odicf", "dc"))
-print(find_perms("bcdxabcdy", "bcdyabcdx"))
-print(find_perms("aaacb", "abc"))
